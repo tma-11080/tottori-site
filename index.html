@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>鳥取県 | 星取県、砂の国から。</title>
+<meta name="description" content="日本一人口の少ない県、鳥取。日本一の砂丘と、日本一近い星空。">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- fixed sky background that transitions from day to night as the user scrolls -->
+<div class="sky" aria-hidden="true">
+  <canvas id="stars"></canvas>
+  <div class="sky-gradient"></div>
+</div>
+
+<div class="grain" aria-hidden="true"></div>
+
+<nav class="nav">
+  <a href="#top" class="nav-mark">鳥取</a>
+  <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#dunes">砂丘</a></li>
+    <li><a href="#culture">文化</a></li>
+    <li><a href="#onsen">温泉</a></li>
+    <li><a href="#taste">味覚</a></li>
+    <li><a href="#stars-section">星空</a></li>
+    <li><a href="#event">イベント</a></li>
+  </ul>
+</nav>
+
+<main id="top">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="hero">
+    <div class="hero-copy">
+      <p class="eyebrow" data-reveal>TOTTORI PREFECTURE — 鳥取県</p>
+      <h1 class="hero-title" data-reveal>
+        <span class="line">日本一、</span>
+        <span class="line">静かな県から。</span>
+      </h1>
+      <p class="hero-sub" data-reveal>
+        日本一人口の少ない県から、日本一近い星空へ。<br>
+        風がつくる砂丘、湯けむり立つ温泉、二十世紀梨——<br>
+        鳥取県をめぐる、小さな旅のはじまり。
+      </p>
+    </div>
+
+    <div class="dune-scene" aria-hidden="true">
+      <svg class="dune-layer dune-back" viewBox="0 0 1440 400" preserveAspectRatio="none">
+        <path d="M0,220 C 220,140 420,260 720,190 C 1000,130 1220,240 1440,170 L1440,400 L0,400 Z"/>
+      </svg>
+      <svg class="dune-layer dune-mid" viewBox="0 0 1440 400" preserveAspectRatio="none">
+        <path d="M0,280 C 240,210 460,320 760,250 C 1040,190 1260,300 1440,240 L1440,400 L0,400 Z"/>
+      </svg>
+      <svg class="dune-layer dune-front" viewBox="0 0 1440 400" preserveAspectRatio="none">
+        <path d="M0,330 C 260,270 520,360 800,300 C 1080,250 1280,340 1440,300 L1440,400 L0,400 Z"/>
+      </svg>
+      <div class="wind-lines">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <div class="scroll-cue" data-reveal>
+      <span>SCROLL</span>
+      <div class="scroll-cue-line"></div>
+    </div>
+  </section>
+
+  <!-- ===================== STATS ===================== -->
+  <section class="stats">
+    <div class="stat" data-reveal>
+      <p class="stat-value">約53<span class="stat-unit">万人</span></p>
+      <p class="stat-label">人口 — 47都道府県中 最少</p>
+    </div>
+    <div class="stat" data-reveal>
+      <p class="stat-value">3,507<span class="stat-unit">km²</span></p>
+      <p class="stat-label">面積</p>
+    </div>
+    <div class="stat" data-reveal>
+      <p class="stat-value">16<span class="stat-unit">km</span></p>
+      <p class="stat-label">鳥取砂丘 東西の広がり</p>
+    </div>
+    <div class="stat" data-reveal>
+      <p class="stat-value">1<span class="stat-unit">つ</span></p>
+      <p class="stat-label">スタバが最後に上陸した県<br class="mobile-break">（2015年）</p>
+    </div>
+  </section>
+
+  <!-- ===================== SAND DUNES ===================== -->
+  <section class="feature" id="dunes">
+    <div class="feature-inner">
+      <p class="section-eyebrow" data-reveal>01 — LANDSCAPE</p>
+      <h2 class="section-title" data-reveal>鳥取砂丘</h2>
+      <p class="section-lead" data-reveal>
+        南北2.4km、東西16kmにおよぶ、日本最大級の海岸砂丘。
+        風が砂の上に描く「風紋（ふうもん）」は、同じ形が二つとない、自然だけが描ける絵。
+        ラクダに乗って歩いたり、すぐそばの「砂の美術館」では、世界中の砂像作家が一年ごとに
+        テーマを変えて彫り上げる、砂だけでできた彫刻に出会える。
+      </p>
+    </div>
+    <div class="ripple-canvas-wrap" aria-hidden="true">
+      <canvas id="ripples"></canvas>
+    </div>
+  </section>
+
+  <!-- ===================== CULTURE ===================== -->
+  <section class="culture" id="culture">
+    <p class="section-eyebrow" data-reveal>02 — CULTURE</p>
+    <h2 class="section-title" data-reveal>鳥取が生んだ、物語。</h2>
+
+    <div class="culture-grid">
+      <article class="culture-card" data-reveal>
+        <p class="culture-kana">MIZUKI SHIGERU</p>
+        <h3>水木しげる</h3>
+        <p class="culture-place">境港市 出身</p>
+        <p class="culture-text">
+          『ゲゲゲの鬼太郎』の生みの親。故郷・境港には妖怪ブロンズ像が並ぶ
+          「水木しげるロード」があり、鬼太郎たちと一緒に商店街を歩くことができる。
+        </p>
+      </article>
+
+      <article class="culture-card" data-reveal>
+        <p class="culture-kana">AOYAMA GOSHO</p>
+        <h3>青山剛昌</h3>
+        <p class="culture-place">北栄町 出身</p>
+        <p class="culture-text">
+          『名探偵コナン』の作者。北栄町には「青山剛昌ふるさと館」があり、
+          町を歩けばコナンや怪盗キッドの銅像が出迎えてくれる。
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===================== ONSEN ===================== -->
+  <section class="onsen" id="onsen">
+    <div class="steam" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <div class="onsen-inner">
+      <p class="section-eyebrow" data-reveal>03 — HOT SPRING</p>
+      <h2 class="section-title" data-reveal>三朝温泉</h2>
+      <p class="section-lead" data-reveal>
+        ラジウムを豊富に含む、世界的にも珍しいラドン泉。
+        「三朝（みささ）」という名前は、three morningsーー三日間浸かれば
+        若返るという言い伝えに由来すると伝えられている。
+        川沿いに湯けむりが立ちのぼる、静かな湯治場の風景が今も残る。
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== TASTE ===================== -->
+  <section class="taste" id="taste">
+    <p class="section-eyebrow" data-reveal>04 — TASTE</p>
+    <h2 class="section-title" data-reveal>味覚</h2>
+
+    <div class="taste-grid">
+      <article class="taste-card" data-reveal>
+        <div class="taste-icon" aria-hidden="true">
+          <svg viewBox="0 0 120 120"><ellipse cx="60" cy="68" rx="38" ry="44"/><path d="M60 24 C 66 14, 78 12, 84 18" fill="none" stroke-width="3"/></svg>
+        </div>
+        <h3>二十世紀梨</h3>
+        <p>みずみずしく上品な甘さで知られる、鳥取を代表する梨。収穫は毎年8月末から。</p>
+      </article>
+      <article class="taste-card" data-reveal>
+        <div class="taste-icon" aria-hidden="true">
+          <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="30"/><path d="M60 30 L60 10 M84 42 L100 28 M84 78 L100 92 M36 42 L20 28 M36 78 L20 92" stroke-width="3"/></svg>
+        </div>
+        <h3>松葉ガニ</h3>
+        <p>山陰の冬を代表する味覚。解禁日には多くの人がその年最初の一杯を求めて訪れる。</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===================== STARS (SIGNATURE) ===================== -->
+  <section class="stars-section" id="stars-section">
+    <div class="stars-copy">
+      <p class="section-eyebrow light" data-reveal>05 — NIGHT SKY</p>
+      <h2 class="pun-wrap" data-reveal>
+        <span class="pun-before">鳥取県</span>
+        <span class="pun-after" aria-hidden="true">星取県</span>
+      </h2>
+      <p class="section-lead light" data-reveal>
+        高い建物も、強い灯りも少ない鳥取の夜は、空がそのまま近くなる。
+        澄んだ夜空と星を「収穫」できる県として、鳥取県は「星取県」を名乗っている。
+        流れる星を、願いごとより先に、ただ見つめる時間を。
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== EVENT (editable placeholder) ===================== -->
+  <section class="event" id="event">
+    <p class="section-eyebrow" data-reveal>EVENT</p>
+    <h2 class="section-title" data-reveal>イベント情報</h2>
+
+    <div class="event-card" data-reveal>
+      <p class="event-edit-note">✎ ここは編集用のプレースホルダーです。実際のイベント情報に書き換えてください。</p>
+      <dl class="event-details">
+        <div><dt>イベント名</dt><dd>〇〇祭 鳥取県ブース展示</dd></div>
+        <div><dt>日時</dt><dd>20XX年X月X日（X） XX:00〜XX:00</dd></div>
+        <div><dt>場所</dt><dd>〇〇高等学校 〇号館 〇階 〇教室</dd></div>
+        <div><dt>内容</dt><dd>鳥取県の砂丘・文化・食・星空についての展示とクイズ</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>鳥取県 紹介サイト — 学校イベント展示用に制作</p>
+    <p class="footer-note">Built for Vercel · 内容は編集して自由にお使いください</p>
+  </footer>
+
+</main>
+
+<script src="js/script.js" defer></script>
+</body>
+</html>
